@@ -180,35 +180,7 @@
             font-family: 'Courier New', monospace;
         }
 
-        #camera-toggle {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, rgba(0, 255, 200, 0.15), rgba(255, 0, 255, 0.1));
-            border: 2px solid #00ffc8;
-            color: #00ffc8;
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 
-                0 0 25px rgba(0, 255, 200, 0.6),
-                0 0 15px rgba(255, 0, 255, 0.3),
-                inset 0 0 15px rgba(0, 255, 200, 0.15);
-            transition: all 0.15s ease;
-            flex-shrink: 0;
-        }
-
-        #camera-toggle:active {
-            background: linear-gradient(135deg, rgba(0, 255, 200, 0.4), rgba(255, 0, 255, 0.25));
-            box-shadow: 
-                0 0 50px rgba(0, 255, 200, 1),
-                0 0 30px rgba(255, 0, 255, 0.6),
-                inset 0 0 20px rgba(0, 255, 200, 0.3);
-            transform: scale(0.92);
-        }
-
+        
         /* 정보 패널 */
         #info-panel {
             position: fixed;
@@ -285,11 +257,15 @@
             margin-bottom: 12px;
             scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
-            justify-content: center;
+            justify-content: flex-start;
+            scroll-snap-type: x mandatory;
         }
 
         #model-selector::-webkit-scrollbar {
             display: none;
+        }
+        #model-selector > .model-card {
+            scroll-snap-align: start;
         }
 
         .model-card {
@@ -601,7 +577,6 @@
         <div id="top-ui">
             <img id="logo" src="logos/logo.png" alt="Logo" onerror="this.style.display='none'">
             <div id="title">SKY TEAM - AR 체험</div>
-            <button id="camera-toggle" title="카메라">📷</button>
         </div>
 
         <div id="info-panel">
@@ -700,7 +675,7 @@
         const modelSelector = document.getElementById('model-selector');
         const canvasContainer = document.getElementById('canvas-container');
         const videoBackground = document.getElementById('video-background');
-        const cameraToggle = document.getElementById('camera-toggle');
+        // 카메라 토글 제거됨
         const bgMusic = document.getElementById('bg-music');
 
         // 배경음악 자동 재생 시도
@@ -1010,7 +985,6 @@
         }
 
         function setupEventListeners() {
-            cameraToggle.addEventListener('click', toggleCamera);
             const infoBtn = document.getElementById('info-button');
             infoBtn.addEventListener('click', toggleInfoPanel);
 
