@@ -1081,7 +1081,7 @@
                 // 워터마크 텍스트
                 ctx.fillStyle = 'rgba(0, 255, 200, 0.6)';
                 ctx.font = 'bold 16px "Courier New"';
-                ctx.fillText('AR 문화재 뷰어', 20, window.innerHeight - 20);
+                ctx.fillText('SKY-TEAM(조성우)', 20, window.innerHeight - 20);
 
                 // 우하단 로고 워터마크
                 try {
@@ -1099,7 +1099,7 @@
 
                         const dataURL = canvas.toDataURL('image/png', 0.95);
                         const link = document.createElement('a');
-                        link.download = `AR문화재_${Date.now()}.png`;
+                        link.download = `SKY-TEAM(조성우)_AR문화재_${Date.now()}.png`;
                         link.href = dataURL;
                         link.click();
                     };
@@ -1107,7 +1107,7 @@
                 } catch (e) {
                     const dataURL = canvas.toDataURL('image/png', 0.95);
                     const link = document.createElement('a');
-                    link.download = `AR문화재_${Date.now()}.png`;
+                    link.download = `SKY-TEAM(조성우)_AR문화재_${Date.now()}.png`;
                     link.href = dataURL;
                     link.click();
                 }
