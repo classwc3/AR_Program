@@ -273,6 +273,9 @@
         #model-selector > .model-card {
             scroll-snap-align: start;
         }
+        #model-selector * {
+            touch-action: pan-x !important;
+        }
 
         .model-card {
             width: 120px;
@@ -293,6 +296,7 @@
             box-shadow: none;
             position: relative;
             overflow: hidden;
+            touch-action: pan-x !important;
         }
 
         .model-card::before {
